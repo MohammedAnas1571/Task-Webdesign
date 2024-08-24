@@ -38,7 +38,7 @@ export default function ProductList() {
   return (
     <section className="py-24">
       <div className="px-6 container lg:px-0">
-        <h1 className="text-4xl pb-8 font-playfair-display text-[#ad9271]">
+        <h1 className="text-2xl md:text-4xl pb-8 font-playfair-display text-[#ad9271]">
           Products
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">

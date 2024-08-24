@@ -1,13 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -16,10 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Label } from "@radix-ui/react-label";
-import { useState } from "react";
+
 export const FadeUp = (delay: number) => {
   return {
     initial: {
@@ -41,12 +30,12 @@ export const FadeUp = (delay: number) => {
 };
 
 const Banner = () => {
-  const [open, setOpen] = useState(false);
+
   return (
     <section className="bg-white overflow-hidden">
-      <Carousel className="w-full  ">
+      <Carousel className="w-full md:h-[750px]">
         <CarouselContent>
-          {Array.from({ length: 2 }).map((_, index) => (
+          {Array.from({ length: 3 }).map((_, index) => (
             <CarouselItem key={index}>
               <div>
                 <Card className="border-none">
@@ -74,7 +63,7 @@ const Banner = () => {
                           initial="initial"
                           animate="animate"
                           className="flex justify-center md:justify-start"
-                          onClick={() => setOpen(true)}
+                   
                         >
                           <button className=" flex items-center justify-center gap-5 font-playfair-display border border-[#AD9271] text-[#AD9271] font-thin text-xl py-3 px-4 group ">
                             <img src="/Group 15.png" alt="" />

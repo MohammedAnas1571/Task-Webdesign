@@ -65,6 +65,7 @@ const Carousel = React.forwardRef<
     )
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
+    const [scrollDirection, setScrollDirection] = React.useState<"next" | "prev">("next")
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -118,6 +119,27 @@ const Carousel = React.forwardRef<
       }
     }, [api, onSelect])
 
+   
+    React.useEffect(() => {
+      const interval = setInterval(() => {
+        if (scrollDirection === "next") {
+          if (canScrollNext) {
+            scrollNext()
+          } else {
+            setScrollDirection("prev")
+          }
+        } else {
+          if (canScrollPrev) {
+            scrollPrev()
+          } else {
+            setScrollDirection("next")
+          }
+        }
+      }, 3000) 
+
+      return () => clearInterval(interval)
+    }, [scrollNext, scrollPrev, canScrollNext, canScrollPrev, scrollDirection])
+
     return (
       <CarouselContext.Provider
         value={{
@@ -146,6 +168,7 @@ const Carousel = React.forwardRef<
     )
   }
 )
+
 Carousel.displayName = "Carousel"
 
 const CarouselContent = React.forwardRef<
