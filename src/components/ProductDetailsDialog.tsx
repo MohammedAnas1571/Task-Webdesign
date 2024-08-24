@@ -31,7 +31,7 @@ export default function ProductDetailsDialog({
             <span className="mb-1 text-slate-500">{category}</span>
             <h3 className="text-lg font-bold mb-4">{title}</h3>
             <img
-              className="w-full aspect-square"
+              className="w-full aspect-auto h-60"
               src={thumbnileURL}
               alt={title}
             />
