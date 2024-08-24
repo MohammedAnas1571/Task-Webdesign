@@ -135,7 +135,7 @@ const Carousel = React.forwardRef<
             setScrollDirection("next")
           }
         }
-      }, 3000) 
+      }, 4000) 
 
       return () => clearInterval(interval)
     }, [scrollNext, scrollPrev, canScrollNext, canScrollPrev, scrollDirection])
